@@ -53,13 +53,11 @@ ___
 
 ◉ **HTML CSS React** - A JavaScript library for building user interfaces.
 
-◉ **Database: MySql** - A popular open-source relational database management system.
+◉ **Database: MongoDB** - A popular open-source relational database management system.
 
-◉ **ORM: Hibernate** - An object-relational mapping tool for Java that simplifies database access.
+◉ **ORM: Moongose** - An object-relational mapping tool for Java that simplifies database access.
 
 ◉ **Azure** - A cloud computing platform and services from Microsoft.
-
-◉ **Unit testing framework**: Junit - A popular testing framework for Java applications.
 
 ◉ **Dependency injection** - A design pattern that allows objects to be loosely coupled and easily tested.
 
@@ -75,11 +73,11 @@ ___
 
 - [X] Create Test Page for Creating objects
 
-- [X] Deploy the project on Azure
+- [ ] Deploy the project on Azure
 
-- [X] Create Application Insights
+- [ ] Create Application Insights
 
-- [X] Connect Application Insights
+- [ ] Connect Application Insights
 
 - [X] Add README on GIT
 
