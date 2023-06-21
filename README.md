@@ -1,4 +1,4 @@
-![img.png](img.png)
+
 # [Calorie Tracker](https://calorie-tracker1.azurewebsites.net)
 ![](https://img.shields.io/github/followers/Shushpin?color=Green&logoColor=Green)
 ![Discord](https://img.shields.io/discord/874770518417485867?label=Discord)
