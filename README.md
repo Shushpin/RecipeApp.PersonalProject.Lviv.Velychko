@@ -7,11 +7,7 @@ ___
 
 ### 🍏About the project
 ___
-‣ Introducing our innovative calorie tracker - the ultimate tool for those striving for optimal health and wellbeing. This app empowers you to effortlessly track your daily calorie intake, set your goals, and monitor your progress towards achieving them.
-
-‣ With a user-friendly interface, our calorie tracker enables you to quickly log all the foods you consume, and access an extensive database of dishes and product categories. You can customize your own list of favorite foods and dishes, and easily record their calorie content.
-
-‣ Our app also allows you to set your daily calorie goal, and monitor the number of calories you have burned. You'll receive detailed statistics on your diet, enabling you to gain valuable insights into your eating habits and make informed decisions that will benefit your health and wellness.
+‣ Introducing ReceiveApp. A program for searching for dishes based on available products. You can also see the calorie rate for the day.
 
 ### 👀How to install and run a project from **GitHub** in your IDE:
 
