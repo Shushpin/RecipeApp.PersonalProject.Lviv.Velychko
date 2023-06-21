@@ -1,5 +1,5 @@
 
-# [Calorie Tracker](https://calorie-tracker1.azurewebsites.net)
+# [ReceiveApp](receiveapp.azurewebsites.net)
 ![](https://img.shields.io/github/followers/Shushpin?color=Green&logoColor=Green)
 ![Discord](https://img.shields.io/discord/874770518417485867?label=Discord)
 ![Tracker view](https://img.shields.io/github/watchers/Shushpin/Velychko.LvivUniversity.PersonalProject?color=Green&label=Shushpin&logoColor=green&style=social)
