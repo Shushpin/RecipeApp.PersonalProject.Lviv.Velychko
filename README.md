@@ -12,35 +12,40 @@ ___
 ### 👀How to install and run a project from **GitHub** in your IDE:
 
 ---
-1. First, you need to have the right IDE on your computer, for example, [IntellijIDEA](https://www.jetbrains.com/idea/);
+Step 1: Cloning the repository
+- First, clone the repository with the project from GitHub. You can use the `git clone' command in the command line or terminal:
+   ```
+   git clone <repository URL>
+   ```
+   Replace `<repository URL>` with the URL of the actual repository on GitHub.
 
+Step 2: Go to the project directory
+- Change to the project directory using the `cd` command:
+   ```
+   cd <project directory name>
+   ```
+   Replace `<project directory name>` with the name of the actual project directory you cloned.
 
-2. Copy the link to the project repository on GitHub. You can find this link on the project page by clicking the green "Code" button in the top right corner. Choose HTTPS or SSH, depending on how you want to clone the repository;
+Step 3: Installing dependencies
+- In the command line or terminal, execute the `npm install` command to install all project dependencies specified in the `package.json` file.
 
-![img_1.png](img_1.png)
+Step 4: Setting up the MongoDB database
+- Make sure you have MongoDB installed and running. If you are using a remote MongoDB database, make sure you have the correct connection information, such as the URL, database name, and credentials.
 
-3. Open the command prompt (Windows) or terminal (Mac/Linux);
+Step 5: Project configuration
+- Open the project files that contain the database settings and make sure they are configured correctly for your MongoDB database. Usually, such settings can be found in the `config.js` or `database.js` file.
 
+Step 6: Launching the project
+- In the command line or terminal, execute the command `node app.js` or `npm start` to start the project.
+   ```
+   node app.js
+   ```
+   or
+   ```
+   npm start
+   ```
 
-4. Navigate to the directory where you want to save the project. You can use the "cd" (change directory) command for this. For example, to navigate to the "Documents" folder, type "cd Documents" (without quotes);
-
-
-5. Clone the project repository using the "git clone" command. Paste the previously copied link to the repository in place of "repository_link":
-
-`git clone https://github.com/Shushpin/Velychko.LvivUniversity.PersonalProject.git`
-
-6. Navigate to the project directory using the "cd" command:
-
-`cd calorie tracker`
-
-7. Build the project using the build tools that the project uses. The project uses Maven, run the command:
-
-`mvn clean install`
-
-8. Run the project using the run command that the project uses.The project is a web application, run it using an application server such as Tomcat:
-
-`cd target ||
-java -jar calorie-tracker1.jar`
+Now your Node.js project using the MongoDB database should be successfully installed and running. Make sure that all dependencies are installed and the database is configured correctly to avoid possible errors.
 ### Technology Stack⚙️
 ___
 
