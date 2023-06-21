@@ -1,0 +1,72 @@
+<%- include('partials/header'); -%>
+
+
+  <div class="bmr-calculator">
+    <h2>BMR Calculator</h2>
+    <div class="controls">
+        <form>
+            <h3>Age</h3>
+            <input type="text" id="age" value="" />
+
+            <div class="gender">
+                <h3>Gender</h3>
+
+                <input type="radio" id="male" value="male" name="gender" checked/>
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" value="female" name="gender"/>
+                <label for="female">Female</label>
+                
+                <div class="height">
+                <h3>Height</h3>
+                <input type="text" id="height" value="" />
+                <div class="unit">cm</div>
+                </div>
+
+                <div class="weight">
+
+                    <h3>Weight</h3>
+                    <input type="text" id="weight" value="">
+                    <div class="unit">kg</div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="result">
+        <button class="calculate-btn">Calculate</button>
+        <div class="result-massage"><span class="calories"></span>
+             Calories/day
+        </div>
+    </div>
+</div>
+<script>
+const calories = document.querySelector(".bmr-calculator .result .calories");
+const calculateBtn = document.querySelector(".bmr-calculator .result .calculate-btn");
+const age = document.querySelector(".bmr-calculator form #age");
+const height = document.querySelector(".bmr-calculator form #height");
+const weight = document.querySelector(".bmr-calculator form #weight");
+
+// BMR = 10*weight + 6.25*height - 5*age + 5
+// BMR = 10*weight + 6.25*height - 5*age - 161
+
+const calculateBMR = (weight, height, age, gender) => {
+    if(gender == male){
+        return 10*weight + 6.25*height - 5*age + 5;
+    }
+        return 10*weight + 6.25*height - 5*age - 161;
+}
+
+calculateBtn.addEventListener("click", () => {
+    let genderValue = document.querySelector(".bmr-calculator form input[name='gender']:checked")
+    .value;
+    let BMR = calculateBMR(weight.value, height.value, age.value, genderValue);
+
+    calories.innerHTML = BMR.toLocaleString("en-US");
+});
+</script>
+<footer>
+<p>
+    Denys Velychko © 2023 CalorieFinder. All rights reserved.
+</p>
+</footer>
+ 

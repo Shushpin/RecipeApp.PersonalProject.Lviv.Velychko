@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav>
+    <h1><a href="/">Calorie Finder</a></h1>
+    
+    <ul>
+      <li><a href="/calories">Calorie Calculator</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <% if (user) { %> 
+      <li>Welcome, <%= user.email %></li>
+      <li><a href="/logout">Logout</a></li>
+      <% } else { %>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup" class="btn">Sign up</a></li>
+      <% } %>
+    </ul>
+  </nav>
+  <section>
+    <div class="container initial ">
+        <h1 class="brand"> Recipe App</h1>
+        <form>
+            <input type="text" placeholder="Search Your Recipe...">
+            <ion-icon name="search"></ion-icon>
+        </form>
+        <div class="search-result">
+            <!-- <div class="item">
+                <img src="../img/gru.png" alt="">
+                <div class="flex-container">
+                    <h1 class="title">This is a recipe</h1>
+                    <a class="view-button" href="#">View Recipe</a>
+                </div>
+                <p class="item-data">Calories: 120 </p>
+            </div> -->
+        </div>
+    </div>
+</section>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+  const searchForm = document.querySelector('form');
+const searchResultDiv = document.querySelector('.search-result');
+const container = document.querySelector('.container');
+let searchQuery = '';
+const APP_ID = '24191341';
+const APP_key = '90d720dd0fdc3d49e61aacc34f3b0f93'
+
+searchForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    searchQuery = e.target.querySelector('input').value;
+    console.log(searchQuery)
+    fetchAPI();
+});
+
+async function fetchAPI (){
+    const baseURL = `https://api.edamam.com/search?q=${searchQuery}&app_id=${APP_ID}&app_key=${APP_key}&to=20`;
+    const response = await fetch(baseURL);
+    const data = await response.json();
+    generateHTML(data.hits);
+    console.log(data);
+}
+function generateHTML(results){
+    container.classList.remove('initial');
+    let generatedHTML = '';
+    results.map(result => {
+        generatedHTML +=
+        `
+        <div class="item">
+              <img src="${result.recipe.image}" alt="">
+            <div class="flex-container">
+                 <h1 class="title">${result.recipe.label}</h1>
+                <a class="view-button" href="${result.recipe.url}" target="_blank">View Recipe</a>
+            </div>
+             <p class="item-data">Calories: ${result.recipe.calories.toFixed(2)} </p>
+             <p class="item-data">Dite label: ${result.recipe.dietLabels.lenght > 0 ? result.recipe.dietLabels : 'No data found'} </p>
+             <p class="item-data">Health Label: ${result.recipe.healthLabels} </p>
+        </div>
+        `
+    })
+    searchResultDiv.innerHTML = generatedHTML;
+}
+</script>
+  <footer>Denys Velychko © 2023 CalorieFinder. All rights reserved.</footer>
+
+</body>
+</html>
